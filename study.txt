@@ -1,0 +1,24 @@
+访问远程桌面：win+R 输入 mstsc。
+计算机：219.138.156.131:40001
+用户名：abc
+密码：Backup@2016~Qjszf
+
+进入之后...
+
+运行  SecureCRTPortable.exe - 快捷方式
+连接  59.208.39.202 。接受并保存  确定
+
+进入  linux下，进入路径  cd/usr/local/   然后ls慢慢找...
+启动服务（202服务器）方法：
+1.输入指令  service tomcat_menhu start/stop
+2.找到tomcat8_menhu 下的bin目录下的文件执行，有两个启动  ./catalina.sh或 ./startup.sh，关闭的文件是 ./shutdown.sh
+查看是否开启服务的方法：lsof -i tcp:8080（tomcat）  80（nginx）  21（FTP）端口不一样
+
+实际是两台服务器202和78。
+202服务器有tomcat和mysql，访问地址后缀为jhtml
+78正式环境服务器有nginx和FTP，访问地址后缀为html
+
+nginx主要是反向代理，将202服务器webapps下的栏目下的所有html文件上传到78服务器上。
+FTP用来上传样式文件、classes文件、xml文件等。
+
+发展学习方向：Git、火车头采集数据等。
